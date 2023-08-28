@@ -32,11 +32,7 @@
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       {% for nav_item in nav %}
-        {{nav_item.title}}
-        {% if nav_item.title == "Tags" -%}
-          No
-        {%- else %}
-          Yes
+        {% if nav_item.title != "Tags" -%}
           {% include "partials/tabs-item.html" %}
         {% endif %}
       {% endfor %}
