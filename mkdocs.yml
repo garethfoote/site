@@ -1,8 +1,7 @@
 site_name: Gareth Foote 
 site_description: Writing in public
 site_url: https://garethfoote.github.io/site/ 
-nav:
-  - Notes: 'Notes/index.md'
+
 theme:
     name: 'material'
     logo: assets/meta/favicons.png
