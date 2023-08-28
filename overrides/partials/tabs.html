@@ -33,7 +33,8 @@
     <ul class="md-tabs__list">
       {% for nav_item in nav %}
         {{nav_item.title}}
-        {% if "tag" not in nav_item.title|lower %}
+        {% if nav_item.title == "Tags" -%}
+        {%- else %}
           {% include "partials/tabs-item.html" %}
         {% endif %}
       {% endfor %}
