@@ -79,6 +79,9 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 plugins:
   - blog
+      categories: false
+      archive: false
+      blog_dir: writing
   - search
   - meta-descriptions
   - git-revision-date-localized:
