@@ -32,7 +32,8 @@
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       {% for nav_item in nav %}
-        {% if 'Tabs' not in nav_item.title %}
+        {{nav_item.title}}
+        {% if "tag" not in nav_item.title|lower %}
           {% include "partials/tabs-item.html" %}
         {% endif %}
       {% endfor %}
