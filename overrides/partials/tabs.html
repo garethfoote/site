@@ -34,7 +34,9 @@
       {% for nav_item in nav %}
         {{nav_item.title}}
         {% if nav_item.title == "Tags" -%}
+          No
         {%- else %}
+          Yes
           {% include "partials/tabs-item.html" %}
         {% endif %}
       {% endfor %}
