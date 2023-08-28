@@ -78,7 +78,7 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 plugins:
-  - blog
+  - blog:
       categories: false
       archive: false
       blog_dir: writing
