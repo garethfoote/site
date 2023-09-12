@@ -1,7 +1,7 @@
 ---
 share: true
 category: Notes
-title: Tree view pattern
+title: Creating an efficient file browsing experience using the Tree View pattern
 ---
 
 #case-study #interaction-design 
