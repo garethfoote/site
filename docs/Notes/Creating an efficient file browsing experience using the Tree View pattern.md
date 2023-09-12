@@ -14,25 +14,8 @@ There are many ways to design a system for accomplishing this in web technologie
 In terms of the UX both Finder (macOS) and File Explorer (Windows) have been dealing with these problems for years by making both options available and configurable.
 ![[Screenshot 2023-09-12 at 08.54.19.png]]
 ## Simplicity, efficiency trade off
-The approach that would create the most simple pages with (less content and complexity per page) would be to render a folder per page load. This gives the advantage of only ever needing to present a simple (non-nested) HTML list:
 
-```html
-<ul>
-	<li class="dir">Cakes</li>
-	<li class="file">Shopping list.txt</li>
-	<li class="dir">Winter Recipes</li>
-</ul>
-```
-![[Screenshot 2023-09-12 at 09.41.03.png]]
-The upsides to this are:
-- Simplicity of rendered HTML
-- Unlikely to be complex to design/build for accessibility
-
-The downsides to this are:
-- Your view is narrow, i.e. you can only every see one folder at a time
-- The overhead of navigating back and forth between folders could become significant if you have a deeply nested folder structure
-
-The alternative is to render all files and folders in a set of nested lists.
+To achieve something like the above in a web interface we would need to render all files and folders in a set of nested lists, and progressively enhance this to allow collapsing and expanding of folders. 
 
 ```html
 <ul>
@@ -52,21 +35,25 @@ The alternative is to render all files and folders in a set of nested lists.
 </ul>
 ```
 
-The upsides to this are:
-- Offers a wider view of the files
-- Easier to navigate back and forth through directories 
+The upsides to this are the ability to have a 'wider' view of your folders. Seeing more than one directory simultaneously. This also helps with locating where you are in a deeply nested structure. It is also trivial to navigate back and forth through directories. 
 
-The downsides to this are:
-- More complex build
-- Accessibility will be more challenging
+The main downside to this approach is that screen readers are not great at representing complex structures such. 
 
 ## User needs
-I'm unable to speak about the specifics of the user and business needs, only that it was deemed sensible to explore the rendering of folders and files in one page allowing them to be navigated in place. 
+I'm unable to speak about the specifics of the user and business needs, only that it was deemed sensible to explore the rendering of folders and files in one page allowing them to be navigated in place. My challenge here was to design this complex pattern with accessibility at the forefront of the process. 
 
 ## Accessible design patterns
-The common design pattern for this type of display and interaction is a 'tree view'. This has an equivalent [ARIA role](https://www.w3.org/TR/2017/REC-wai-aria-1.1-20171214/#tree) and implementation guidance from [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/), [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tree_role) and various design systems. See my page of [[UX Pattern - Tree view|UX research on the Tree View]].
+The common design pattern for this type of display and interaction is a 'tree view'. This has an equivalent [ARIA role](https://www.w3.org/TR/2017/REC-wai-aria-1.1-20171214/#tree) and implementation guidance from [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/), [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tree_role) and various design systems. 
 
-## Implementation 
+See my page of [[UX Pattern - Tree view|UX research on the Tree View]].
+
+## Design 
+
+|     |  |
+| -------- | ------- |
+| ![[File selection - Radio buttons.png]]  | ![[File selection - Radio buttons.png]]    |
+
+
 
 <iframe
   id="inlineFrameExample"
